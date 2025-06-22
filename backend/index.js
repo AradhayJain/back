@@ -22,7 +22,9 @@ app.use('/api/users',userRoutes);
 
 
 
-
+app.get('/',(req,res)=>{
+    res.send("this is api service for SAFESHEILD");
+})
 
 app.listen(PORT, ()=>{
     MongoDB();
