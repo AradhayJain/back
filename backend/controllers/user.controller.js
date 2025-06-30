@@ -47,10 +47,13 @@ export const loginUser = asyncHandler(async (req, res) => {
   if (user && (await user.matchPassword(password))) {
     const token = generateToken(user._id);
     res.status(200).json({
-      _id: user._id,
-      username: user.username,
-      AccountNumber: user.AccountNumber,
-      PhoneNumber: user.PhoneNumber,
+      user:{
+        _id: user._id,
+        username: user.username,
+        AccountNumber: user.AccountNumber,
+        PhoneNumber: user.PhoneNumber,
+        
+      },
       token: token,
     });
   } else {
