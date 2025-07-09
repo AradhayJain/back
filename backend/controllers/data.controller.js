@@ -93,10 +93,10 @@ export const sendData = async (req, res) => {
     console.log(requestData)
   
     try {
-      const response = await axios.post('http://localhost:5000/train_model', requestData);
+      // const response = await axios.post('http://localhost:5000/train_model', requestData);
       res.status(200).json({
         message: 'Data sent successfully to prediction server.',
-        response:response.data
+        response:requestData
     });
     } catch (error) {
       console.error("Prediction API error:", error.message);
